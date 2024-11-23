@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeterClient";
+
+package log;
+
+service Logger {
+	rpc LogInfo (LogRequest) returns (LogResponse);
+}
+
+message LogRequest {
+	string message = 1;
+}
+
+message LogResponse {
+	bool isSaved = 1;
+}
